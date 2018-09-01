@@ -1,0 +1,8 @@
+.navbarfloatright{
+    width:100%;
+}
+
+.navbarfloatright ul{
+    width:fit-content;
+    float:right;
+}
