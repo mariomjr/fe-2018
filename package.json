@@ -1,0 +1,22 @@
+{
+  "name": "mariomjr.github.io",
+  "version": "1.0.0",
+  "description": "Membros do Grupo: * Mário Hayasaki Júnior * Lucas Fernandes * Fernando Souza",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariomjr/mariomjr.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariomjr/mariomjr.github.io/issues"
+  },
+  "homepage": "https://github.com/mariomjr/mariomjr.github.io#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
