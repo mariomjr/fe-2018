@@ -6,6 +6,6 @@ Membros do Grupo:
 
 
 # Rodar localmente
-npm install
-http-server -c-1
+* npm install
+* http-server -c-1
 
