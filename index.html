@@ -13,7 +13,7 @@
         crossorigin="anonymous">
 </head>
 
-<body>
+<body onLoad="init()">
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
         <a class="navbar-brand mr-1" href="index.html">Identificação de pacientes</a>
         <div class="navbarfloatright">
@@ -29,29 +29,29 @@
     </nav>
 
     <div id="content">
-        <ul class="nav nav-pills" id="pills-tab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link nav-link--custom  active" id="pills-identificador-tab" data-toggle="pill" href="#pills-identificador"
-                    role="tab" aria-controls="pills-identificador" aria-selected="true">Identificadores</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link--custom " id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
-                    aria-selected="false">Nomes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-link--custom " id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
-                    aria-selected="false">Dados demográficos</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-identificador" role="tabpanel" aria-labelledby="pills-identificador-tab">
-                <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3">Cadastro pessoal</h4>
-                    <form class="needs-validation" novalidate>
+        <form class="needs-validation" id="pacienteForm">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link nav-link--custom  active" id="pills-identificador-tab" data-toggle="pill" href="#pills-identificador"
+                        role="tab" aria-controls="pills-identificador" aria-selected="true">Identificadores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link--custom " id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Nomes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link--custom " id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Dados demográficos</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-identificador" role="tabpanel" aria-labelledby="pills-identificador-tab">
+                    <div class="col-md-8 order-md-1">
+                        <h4 class="mb-3">Cadastro pessoal</h4>
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <label for="tipoIdentificadorSl">Tipo de identificador</label>
-                                <select id="tipoIdentificadorSl" class="form-control">
+                                <select id="tipoIdentificadorSl" class="form-control" name="tipoIdentificador">
                                     <option value="01">Único dentro da organização</option>
                                     <option value="02">Número do prontuário</option>
                                     <option value="21">Radiologia</option>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="col-md-6 form-group">
                                 <label for="areaGeograficaSl">Área geográfica</label>
-                                <select id="areaGeograficaSl" class="form-control">
+                                <select id="areaGeograficaSl" class="form-control" name="areaGeografica">
                                     <option value="1">Local</option>
                                     <option value="2">Área/Região/Distrito</option>
                                     <option value="3">Estado/Província/Território</option>
@@ -88,50 +88,49 @@
                                 <input type="text" class="form-control" id="emissorInput" placeholder="" value="">
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="col-md-12">
-                    <h4 class="mb-3">Nome completo</h4>
-                    <form class="needs-validation" novalidate>
-                        <div class="row">
-                            <div class="col-sm-6 col-lg-3 form-group">
-                                <label>Títulos</label>
-                                <div class="input-append">
-                                    <input type="text" class="form-control input-append__input">
-                                    <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="col-md-12">
+                        <h4 class="mb-3">Nome completo</h4>
+                        <form class="needs-validation" novalidate>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3 form-group">
+                                    <label>Títulos</label>
+                                    <div class="input-append">
+                                        <input id="titlesInputList" name="titlesInputList" type="text" class="form-control input-append__input" disabled>
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 form-group">
+                                    <label>Nomes</label>
+                                    <div class="input-append">
+                                        <input id="namesInputList" type="text" class="form-control input-append__input" disabled>
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3 form-group">
+                                    <label>Sobrenomes</label>
+                                    <div class="input-append">
+                                        <input id="surnameInputList" type="text" class="form-control input-append__input">
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 form-group">
+                                    <label>Sufixos</label>
+                                    <div class="input-append">
+                                        <input id="suffixInputList" type="text" class="form-control input-append__input">
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3 form-group">
-                                <label>Nomes</label>
-                                <div class="input-append">
-                                    <input type="text" class="form-control input-append__input">
-                                    <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3 form-group">
-                                <label>Sobrenomes</label>
-                                <div class="input-append">
-                                    <input type="text" class="form-control input-append__input">
-                                    <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 form-group">
-                                <label>Sufixos</label>
-                                <div class="input-append">
-                                    <input type="text" class="form-control input-append__input">
-                                    <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
             </div>
-
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-        </div>
+        </form>
     </div>
 
     <div class="modal fade" id="titlesModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -144,31 +143,32 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-md-10">
-                            <input type="text" class="form-control">
+                            <label for="">Novo título</label>
+                            <input id="titleInput" type="text" class="form-control">
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" onclick="addItemToList('titlesList', 'titleInput', 'titlesInputList')">
                                 <i class="fas fa-plus-circle"></i>
                             </button>
                         </div>
                     </div>
                     <div class="row">
-                        <ul>
-                            <li>
-                                <span>Lucas</span>
-                            </li>
-                        </ul>
+                        <div class="col-md-12">
+                            <h4>Títulos cadastrados</h4>
+                            <ul id="titlesList" class="titles-list"></ul>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
                 </div>
             </div>
         </div>
     </div>
+    <div class="load-html" data-source="teste.html"></div>
 
     <script src="resources/js/jquery-3.3.1.min.js"></script>
     <script src="resources/js/script.js"></script>
