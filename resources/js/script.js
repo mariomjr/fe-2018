@@ -2,7 +2,9 @@ function init() {
     $(".load-html").each(function () {
         $(this).load(this.dataset.source);
     });
-    console.log('teste');
+    $(document).ready(() => {
+        addEnterEvenToButtons();
+    });
 }
 
 
@@ -29,5 +31,30 @@ function addValuesToInput(listId, inputId) {
         namesList.push(name);
     });
     document.getElementById(inputId).value = namesList.toString();
-    console.log(document.getElementById("pacienteForm").elements.namedItem('titlesInputList').value);    
+}
+
+function registerName() {
+    const titles = document.getElementById('titlesInputList').value.replace(/,/g, " ");
+    const names = document.getElementById('namesInputList').value.replace(/,/g, " ");
+    //const surnames = document.getElementById('surnamesInputList').value.replace(',', " ");
+    //const suffix = document.getElementById('suffixInputList').value.replace(',', " ");
+
+    const fullName = titles + " " + names;
+    if(!fullName.trim()) return;
+    const myList = document.getElementById('registeredNames');
+    const node = document.createElement('li');
+    const span = document.createElement('span');
+    span.innerHTML = fullName;
+    node.appendChild(span);
+    myList.appendChild(node);
+}
+
+function addEnterEvenToButtons() {
+    document.getElementById("titleInput").addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("buttonAddTitle").click();
+            document.getElementById("titleInput").focus();
+        }
+    });
 }

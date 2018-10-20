@@ -106,23 +106,33 @@
                                 <div class="col-sm-6 col-lg-3 form-group">
                                     <label>Nomes</label>
                                     <div class="input-append">
-                                        <input id="namesInputList" type="text" class="form-control input-append__input" disabled>
-                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                        <input id="namesInputList" name="namesInputList" type="text" class="form-control input-append__input" disabled>
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#namesModal"></i>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-lg-3 form-group">
                                     <label>Sobrenomes</label>
                                     <div class="input-append">
-                                        <input id="surnameInputList" type="text" class="form-control input-append__input">
+                                        <input id="surnameInputList" name="surnamesInputList" type="text" class="form-control input-append__input" disabled>
                                         <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3 form-group">
                                     <label>Sufixos</label>
                                     <div class="input-append">
-                                        <input id="suffixInputList" type="text" class="form-control input-append__input">
+                                        <input id="suffixInputList" name="suffixInputList" type="text" class="form-control input-append__input" disabled>
                                         <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-dark float-right" onclick="registerName()">Registrar nome</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul id="registeredNames" class="modal-text-list"></ul>
                                 </div>
                             </div>
                         </form>
@@ -132,43 +142,9 @@
             </div>
         </form>
     </div>
-<!-- 
-    <div class="modal fade" id="titlesModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Títulos</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row mb-3">
-                        <div class="col-md-10">
-                            <label for="">Novo título</label>
-                            <input id="titleInput" type="text" class="form-control">
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-primary" onclick="addItemToList('titlesList', 'titleInput', 'titlesInputList')">
-                                <i class="fas fa-plus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Títulos cadastrados</h4>
-                            <ul id="titlesList" class="titles-list"></ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
+
     <div class="load-html" data-source="/components/modal_titulos.html"></div>
+    <div class="load-html" data-source="/components/modal_nomes.html"></div>
 
     <script src="resources/js/jquery-3.3.1.min.js"></script>
     <script src="resources/js/script.js"></script>

@@ -61,22 +61,30 @@
 /* ------------------------- */
 
 /* Lista de nomes */
-.titles-list {
+.modal-text-list {
     list-style: none;
     background-color: #eaeaea;
     border-radius: 6px;
     padding: 10px;
 }
 
-.titles-list li {
+.modal-text-list:empty {
+    display: none;
+}
+
+.modal-text-list:not(:empty) {
+    display: block;
+}
+
+.modal-text-list li {
     padding: 5px;
 }
 
-.titles-list li:not(:last-child) {
+.modal-text-list li:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0,0, 0.1);
 }
 
-.titles-list li span {
+.modal-text-list li span {
     font-weight: 600;
 }
 /* --------------- */
