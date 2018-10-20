@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="resources/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
 </head>
 
 <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
         <a class="navbar-brand mr-1" href="index.html">Identificação de pacientes</a>
         <div class="navbarfloatright">
             <ul class="navbar-nav navbarfloatright">
@@ -28,17 +29,17 @@
     </nav>
 
     <div id="content">
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="pills-identificador-tab" data-toggle="pill" href="#pills-identificador" role="tab" aria-controls="pills-identificador"
-                    aria-selected="true">Identificadores</a>
+                <a class="nav-link nav-link--custom  active" id="pills-identificador-tab" data-toggle="pill" href="#pills-identificador"
+                    role="tab" aria-controls="pills-identificador" aria-selected="true">Identificadores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+                <a class="nav-link nav-link--custom " id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
                     aria-selected="false">Nomes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
+                <a class="nav-link nav-link--custom " id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
                     aria-selected="false">Dados demográficos</a>
             </li>
         </ul>
@@ -48,17 +49,17 @@
                     <h4 class="mb-3">Cadastro pessoal</h4>
                     <form class="needs-validation" novalidate>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 form-group">
                                 <label for="tipoIdentificadorSl">Tipo de identificador</label>
                                 <select id="tipoIdentificadorSl" class="form-control">
                                     <option value="01">Único dentro da organização</option>
                                     <option value="02">Número do prontuário</option>
                                     <option value="21">Radiologia</option>
-                                    <option value="22">Patilogia</option>
+                                    <option value="22">Patologia</option>
                                     <option value="23">Farmácia</option>
                                 </select>
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 form-group">
                                 <label for="areaGeograficaSl">Área geográfica</label>
                                 <select id="areaGeograficaSl" class="form-control">
                                     <option value="1">Local</option>
@@ -69,31 +70,103 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 form-group">
                                 <label for="designacaoInput">Designação</label>
                                 <input type="text" class="form-control" id="designacaoInput" placeholder="" value="" required>
                                 <div class="invalid-feedback">
                                     Designação está vazio.
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 form-group">
                                 <label for="dateInput">Data</label>
-                                <input type="date" class="form-control" id="dateInput" placeholder="" value="" 
-                                    style="width:100%">
+                                <input type="date" class="form-control" id="dateInput" placeholder="" value="" style="width:100%">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 form-group">
                                 <label for="emissorInput">Emissor</label>
-                                <input type="text" class="form-control" id="emissorInput" placeholder="" value="" >
+                                <input type="text" class="form-control" id="emissorInput" placeholder="" value="">
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="col-md-12">
+                    <h4 class="mb-3">Nome completo</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-3 form-group">
+                                <label>Títulos</label>
+                                <div class="input-append">
+                                    <input type="text" class="form-control input-append__input">
+                                    <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3 form-group">
+                                <label>Nomes</label>
+                                <div class="input-append">
+                                    <input type="text" class="form-control input-append__input">
+                                    <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3 form-group">
+                                <label>Sobrenomes</label>
+                                <div class="input-append">
+                                    <input type="text" class="form-control input-append__input">
+                                    <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 form-group">
+                                <label>Sufixos</label>
+                                <div class="input-append">
+                                    <input type="text" class="form-control input-append__input">
+                                    <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="titlesModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Títulos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>
+                                <span>Lucas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
         </div>
     </div>
 
