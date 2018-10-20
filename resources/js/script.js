@@ -1,5 +1,7 @@
 function init() {
-    //document.getElementById('addtitleToList').onclick = addItemToList();
+    $(".load-html").each(function () {
+        $(this).load(this.dataset.source);
+    });
     console.log('teste');
 }
 
