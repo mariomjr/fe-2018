@@ -3,7 +3,7 @@ function init() {
         $(this).load(this.dataset.source);
     });
     $(document).ready(() => {
-        addEnterEvenToButtons();
+       // addEnterEvenToButtons();
     });
 }
 
@@ -66,21 +66,16 @@ function registerName() {
     node.appendChild(btnDel);
     myList.appendChild(node);
 
-    const nameUse = document.getElementById('nameUse').value;
-    const nameRepresentation = document.getElementById('nameRepresentation').value;
+    document.getElementById('tabelaVazia').style.display = 'none';
+
+    const nameUseStr = document.getElementById('nameUse').value;
+    const nameRepresentationStr = document.getElementById('nameRepresentation').value;
     const startDate = document.getElementById('startDate').value;
     const endDate = document.getElementById('endDate').value;
 
+    var name = new name(nameUseStr, nameRepresentationStr);
 
-    const nameInfo = {
-        full_name: fullName,
-        use: nameUse,
-        represetation: nameRepresentation,
-        start_date: startDate,
-        end_date: endDate
-    }
-
-    saveNameLocalStorage(nameInfo);
+    saveNameLocalStorage(name);
     clearFields();
 }
 
@@ -107,7 +102,7 @@ function clearFields() {
     });
     const suffixList = [...document.getElementById('suffixList').children];
     suffixList.forEach(li => {
-        document.getElementById('surnamesList').removeChild(li);
+        document.getElementById('suffixList').removeChild(li);
     });
 }
 

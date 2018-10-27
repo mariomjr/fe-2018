@@ -1,4 +1,12 @@
-#content {
+.page, :target ~ .default{
+    display:none;
+}
+
+.dafault, :target{
+    display:block;
+}
+
+.page-content {
     margin: 20px;
 }
 
