@@ -1,0 +1,43 @@
+<div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Cadastro pessoal</h4>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label for="tipoIdentificadorSl">Tipo de identificador</label>
+            <select id="tipoIdentificadorSl" class="form-control" name="tipoIdentificador">
+                <option value="01">Único dentro da organização</option>
+                <option value="02">Número do prontuário</option>
+                <option value="21">Radiologia</option>
+                <option value="22">Patologia</option>
+                <option value="23">Farmácia</option>
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label for="areaGeograficaSl">Área geográfica</label>
+            <select id="areaGeograficaSl" class="form-control" name="areaGeografica">
+                <option value="1">Local</option>
+                <option value="2">Área/Região/Distrito</option>
+                <option value="3">Estado/Província/Território</option>
+                <option value="4">Nacional</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label for="designacaoInput">Designação</label>
+            <input type="text" class="form-control" id="designacaoInput" placeholder="" value="" required>
+            <div class="invalid-feedback">
+                Designação está vazio.
+            </div>
+        </div>
+        <div class="col-md-6 form-group">
+            <label for="dateInput">Data</label>
+            <input type="date" class="form-control" id="dateInput" placeholder="" value="" style="width:100%">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label for="emissorInput">Emissor</label>
+            <input type="text" class="form-control" id="emissorInput" placeholder="" value="">
+        </div>
+    </div>
+</div>
