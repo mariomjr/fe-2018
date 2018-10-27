@@ -47,10 +47,10 @@ function addValuesToInput(listId, inputId) {
 function registerName() {
     const titles = document.getElementById('titlesInputList').value.replace(/,/g, " ");
     const names = document.getElementById('namesInputList').value.replace(/,/g, " ");
-    //const surnames = document.getElementById('surnamesInputList').value.replace(',', " ");
-    //const suffix = document.getElementById('suffixInputList').value.replace(',', " ");
+    const surnames = document.getElementById('surnamesInputList').value.replace(/,/g, " ");
+    const suffix = document.getElementById('suffixInputList').value.replace(/,/g, " ");
 
-    const fullName = titles + " " + names;
+    const fullName = titles + " " + names + " " + surnames;
     if(!fullName.trim()) return;
     const myList = document.getElementById('registeredNames');
     const node = document.createElement('li');
@@ -68,17 +68,47 @@ function registerName() {
 
     const nameUse = document.getElementById('nameUse').value;
     const nameRepresentation = document.getElementById('nameRepresentation').value;
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+
 
     const nameInfo = {
         full_name: fullName,
         use: nameUse,
-        represetation: nameRepresentation
+        represetation: nameRepresentation,
+        start_date: startDate,
+        end_date: endDate
     }
+
     saveNameLocalStorage(nameInfo);
+    clearFields();
 }
 
-function removeNamesFormInput() {
+function clearFields() {
+    document.getElementById('titlesInputList').value = ''
+    document.getElementById('namesInputList').value = '';
+    document.getElementById('surnamesInputList').value = '';
+    document.getElementById('suffixInputList').value = '';
+    document.getElementById('nameRepresentation').value = '';
+    document.getElementById('startDate').value = '';
+    document.getElementById('endDate').value = '';
 
+    const titlesList = [...document.getElementById('titlesList').children];
+    titlesList.forEach(li => {
+        document.getElementById('titlesList').removeChild(li);
+    });
+    const namesList = [...document.getElementById('namesList').children];
+    namesList.forEach(li => {
+        document.getElementById('namesList').removeChild(li);
+    });
+    const surnamesList = [...document.getElementById('surnamesList').children];
+    surnamesList.forEach(li => {
+        document.getElementById('surnamesList').removeChild(li);
+    });
+    const suffixList = [...document.getElementById('suffixList').children];
+    suffixList.forEach(li => {
+        document.getElementById('surnamesList').removeChild(li);
+    });
 }
 
 function addEnterEvenToButtons() {
@@ -95,4 +125,8 @@ function saveNameLocalStorage(nameInfo) {
     currentList = JSON.parse(localStorage.getItem('names')) || [];
     currentList.push(nameInfo);
     localStorage.setItem('names', JSON.stringify(currentList));
+}
+
+function removeNameLocalStorage() {
+
 }

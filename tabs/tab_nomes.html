@@ -20,20 +20,20 @@
                <div class="col-md-6 form-group">
                    <label>Sobrenomes</label>
                    <div class="input-append">
-                       <input id="surnameInputList" name="surnamesInputList" type="text" class="form-control input-append__input" disabled>
-                       <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                       <input id="surnamesInputList" name="surnamesInputList" type="text" class="form-control input-append__input" disabled>
+                       <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#surnamesModal"></i>
                    </div>
                </div>
                <div class="col-md-6 form-group">
                    <label>Sufixos</label>
                    <div class="input-append">
                        <input id="suffixInputList" name="suffixInputList" type="text" class="form-control input-append__input" disabled>
-                       <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                       <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#suffixModal"></i>
                    </div>
                </div>
                <div class="col-md-6 form-group">
                    <label>Uso</label>
-                   <select id="nameUse" class="form-control">
+                   <select id="nameUse" class="form-control" name="nameUserSelect">
                        <option value="R">Relatório (R)</option>
                        <option value="N">Nome de recém-nascido (N)</option>
                        <option value="C">Nome profissional ou comercial (C)</option>
@@ -44,7 +44,15 @@
                </div>
                <div class="col-md-6 form-group">
                    <label>Representação alternativa</label>
-                   <input id="nameRepresentation" type="text" class="form-control">
+                   <input id="nameRepresentation" type="text" class="form-control" name="nameRepresentationInput">
+               </div>
+               <div class="col-md-6 form-group">
+                   <label>Data de uso inicial</label>
+                   <input id="startDate" type="date" class="form-control" name="startDateInput">
+               </div>
+               <div class="col-md-6 form-group">
+                   <label>Data de uso final</label>
+                   <input id="endDate"type="date" class="form-control" name="endDateInput">
                </div>
            </div>
            <div class="row mb-5">
