@@ -82,9 +82,14 @@
 
 .modal-text-list li:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0,0, 0.1);
+    height: 50px;
 }
 
 .modal-text-list li span {
     font-weight: 600;
+}
+
+.modal-text-list li button {
+    
 }
 /* --------------- */
