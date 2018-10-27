@@ -92,4 +92,8 @@
 .modal-text-list li button {
     
 }
+
+.form-group-zero-margin-bottom{
+    margin-bottom: 0rem !important;
+}
 /* --------------- */
