@@ -75,7 +75,7 @@ function registerName() {
 
     var name = new name(nameUseStr, nameRepresentationStr);
 
-    saveNameLocalStorage(name);
+    saveLocalStorage(name,'names');
     clearFields();
 }
 
@@ -116,10 +116,10 @@ function addEnterEvenToButtons() {
     });
 }
 
-function saveNameLocalStorage(nameInfo) {
-    currentList = JSON.parse(localStorage.getItem('names')) || [];
+function saveLocalStorage(nameInfo, tag) {
+    currentList = JSON.parse(localStorage.getItem(tag)) || [];
     currentList.push(nameInfo);
-    localStorage.setItem('names', JSON.stringify(currentList));
+    localStorage.setItem(tag, JSON.stringify(currentList));
 }
 
 function removeNameLocalStorage() {
