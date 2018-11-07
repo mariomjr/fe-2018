@@ -137,17 +137,17 @@
         <div class="form-group form-group-zero-margin-bottom">
             <label>Dia:</label>
             <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="paisEndereco">
+                <input type="radio" class="form-check-input" name="paisEndereco" checked value="BRASIL" onchange="changePais(this)">
                 <label class="form-check-label">Brasil</label>
             </div>
             <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="paisEndereco">
+                <input type="radio" class="form-check-input" name="paisEndereco" value="OUTRO" onchange="changePais(this)">
                 <label class="form-check-label">Outro</label>
             </div>
         </div>
     </div>
 </div>
-<div class="card">
+<div class="card" id="cardBrasil">
     <div class="card-body">
         <div class="col-md-4 form-group">
             <label>Estado:</label>
@@ -157,19 +157,45 @@
             <label>Cidade:</label>
             <select id="cidade1" class="form-control"></select>
         </div>
-        <script language="JavaScript" type="text/javascript" charset="utf-8">
-            new dgCidadesEstados({
-            cidade: document.getElementById('cidade1'),
-            estado: document.getElementById('estado1')
-            })
-        </script>
     </div>
 </div>
-<div class="card">
+<div class="card" style="display:none" id="cardOutro">
     <div class="card-body">
         <div class="col-md-4 form-group">
             <label>País:</label>
-            <div class="load-html" data-source="/tabs/paisesSelect.html"></div>
+            <div id="paisesSelect"></div>
+        </div>
+        <div class="col-md-4 form-group">
+            <label for="estadoEnderecoInput">Estado</label>
+            <input type="text" class="form-control" id="estadoEnderecoInput" placeholder="" value="">
+        </div>
+        <div class="col-md-4 form-group">
+            <label for="municipioEnderecoInput">Município</label>
+            <input type="text" class="form-control" id="municipioEnderecoInput" placeholder="" value="">
         </div>
     </div>
 </div>
+
+<div class="col-md-6 form-group">
+    <label for="caixapostalEnderecoInput">Caixa postal</label>
+    <input type="text" class="form-control" id="caixapostalEnderecoInput" placeholder="" value="">
+</div>
+<div class="col-md-6 form-group">
+    <label for="cepInput">CEP</label>
+    <input type="text" class="form-control" id="cepInput" placeholder="" value="">
+</div>
+<div class="col-md-6 form-group">
+    <label for="bairroInput">Bairro</label>
+    <input type="text" class="form-control" id="bairroInput" placeholder="" value="">
+</div>    
+<div class="col-md-6 form-group">
+    <label for="distritoInput">Distrito</label>
+    <input type="text" class="form-control" id="distritoInput" placeholder="" value="">
+</div> 
+
+<div class="col-md-12 form-group">
+    <label for="enderecoInput">Endereço</label>
+    <input type="text" class="form-control" id="enderecoInput" placeholder="" value="">
+</div>
+
+<script src="../resources/js/scriptEndereco.js"></script>
