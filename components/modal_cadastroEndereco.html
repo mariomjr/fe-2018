@@ -35,15 +35,15 @@
                                         <div class="form-group form-group-zero-margin-bottom">
                                             <label>Dia:</label>
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp" value="ACURADO">
                                                 <label class="form-check-label">Acurado</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp" value="ESTIMADO">
                                                 <label class="form-check-label">Estimado</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp" value="DESCONHECIDO">
                                                 <label class="form-check-label">Desconhecido</label>
                                             </div>
                                         </div>
@@ -211,7 +211,8 @@
                         <input type="text" class="form-control" id="enderecoInput" placeholder="" value="">
                     </div>
                 </div>
-                <button type="button" class="btn btn-success">Adicionar</button>
+                <button type="button" class="btn btn-success" onclick="adicionarEndereco()"
+                    data-dismiss="modal">Adicionar</button>
                 <script src="../resources/js/scriptEndereco.js"></script>
             </div>
         </div>
