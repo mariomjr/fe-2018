@@ -1,99 +1,12 @@
-<div class="col-md-12">
-    <h4 class="mb-3">Cadastro pessoal</h4>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastroIdentificadorModal">
+        Adicionar Identificador
+</button>
+<div class="col-md-6" style="margin-top:20px">
+    <h4 class="mb-3">Cadastrados</h4>
     <div class="row">
-        <div class="col-md-4 form-group">
-            <label for="tipoIdentificadorSl">Tipo de identificador</label>
-            <select id="tipoIdentificadorSl" class="form-control" name="tipoIdentificador">
-                <option value="01">Único dentro da organização</option>
-                <option value="02">Número do prontuário</option>
-                <option value="21">Radiologia</option>
-                <option value="22">Patologia</option>
-                <option value="23">Farmácia</option>
-            </select>
-        </div>
-        <div class="col-md-4 form-group">
-            <label for="areaGeograficaSl">Área geográfica</label>
-            <select id="areaGeograficaSl" class="form-control" name="areaGeografica">
-                <option value="1">Local</option>
-                <option value="2">Área/Região/Distrito</option>
-                <option value="3">Estado/Província/Território</option>
-                <option value="4">Nacional</option>
-            </select>
-        </div>
-        <div class="col-md-4 form-group">
-                <label for="dateInput">Data</label>
-                <input type="date" class="form-control" id="dateInput" placeholder="" value="" style="width:100%">
-        </div>
-        <div class="col-md-6 form-group">
-            <label for="designacaoInput">Designação</label>
-            <input type="text" class="form-control" id="designacaoInput" placeholder="" value="" required>
-            <div class="invalid-feedback">
-                Designação está vazio.
-            </div>
-        </div>
-        <div class="col-md-6 form-group">
-            <label for="emissorInput">Emissor</label>
-            <input type="text" class="form-control" id="emissorInput" placeholder="" value="">
-        </div>
-    </div>
-</div>
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <label for="tipoCertidaoSl">Tipo de certidão</label>
-                <select id="tipoCertidaoSl" class="form-control" name="tipoCertidao">
-                    <option value="nascimento">Nascimento</option>
-                    <option value="casamento">Casamento</option>
-                    <option value="divorsio">Divórcio</option>
-                </select>
-            </div>
-            <div class="col-md-12 form-group">
-                <label for="nomeCartorioInput">Nome do cartório</label>
-                <input type="text" class="form-control" id="nomeCartorioInput" placeholder="" value="">
-            </div>
-            <div class="col-md-4 form-group">
-                <label for="livroInput">Livro</label>
-                <input type="text" class="form-control" id="livroInput" placeholder="" value="">
-            </div>
-            <div class="col-md-4 form-group">
-                <label for="folhaInput">Folha</label>
-                <input type="text" class="form-control" id="folhaInput" placeholder="" value="">
-            </div>
-            <div class="col-md-4 form-group">
-                <label for="tempoInput">Termo</label>
-                <input type="text" class="form-control" id="termoInput" placeholder="" value="">
-            </div>         
-        </div>
-    </div>
-</div>
-<div class="card">
-    <div class="card-header">Carteira de trabalho</div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-6 form-group">
-                <label for="serieCarteiraInput">Série</label>
-                <input type="text" class="form-control" id="serieCarteiraInput" placeholder="" value="">
-            </div>
-            <div class="col-md-6 form-group">
-                <label for="estadoCarteiraInput">Estado</label>
-                <input type="text" class="form-control" id="estadoCarteiraInput" placeholder="" value="">
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card">
-    <div class="card-header">Título de eleitor</div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-6 form-group">
-                <label for="secaoTituloInput">Seção</label>
-                <input type="text" class="form-control" id="secaoTituloInput" placeholder="" value="">
-            </div>
-            <div class="col-md-6 form-group">
-                <label for="zonaTituloInput">Zona</label>
-                <input type="text" class="form-control" id="zonaTituloInput" placeholder="" value="">
-            </div>
+        <div class="col-md-12">
+            <ul id="registeredIdentificador" class="modal-text-list"></ul>
+            <div id="tabelaVaziaIdentificador">Nenhum identificador cadastrado!</div>
         </div>
     </div>
 </div>
