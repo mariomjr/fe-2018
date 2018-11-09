@@ -39,7 +39,7 @@ function adicionarEndereco() {
 
     var id = "id" + Math.random().toString(16).slice(2);
 
-    const enredecoFull = enderecoIt +' '+bairro;
+    const enderecoFull = enderecoIt +' '+bairro;
     adicionarItemLista(enderecoFull, id);
 
     document.getElementById('tabelaVaziaEndereco').style.display = 'none';
