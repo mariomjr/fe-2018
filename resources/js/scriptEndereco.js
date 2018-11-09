@@ -56,7 +56,7 @@ function adicionarItemLista(nomeItemLista, idHidden){
 
     var inputHidden = document.createElement("input");
     inputHidden.setAttribute("type", "hidden");
-    inputHidden.setAttribute("value", id);
+    inputHidden.setAttribute("value", idHidden);
     const myList = document.getElementById('registeredEndereco');
     const node = document.createElement('li');
     const span = document.createElement('span');
