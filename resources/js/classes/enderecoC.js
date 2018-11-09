@@ -1,8 +1,9 @@
 class enderecoC{
-    constructor(endereco, bairro, tipoEndereco, 
+    constructor(id, endereco, bairro, tipoEndereco, 
         dataInicio, indicadorDiaInicio, indicadorMesInicio, indicadorAnoInicio,
         dataFim, indicadorDiaFim, indicadorMesFim, indicadorAnoFim,
         caixaPostal, cep, distrito) {
+        this.id = id;
         this.endereco = endereco;
         this.bairro = bairro;
         this.tipoEndereco = tipoEndereco;
