@@ -59,7 +59,7 @@ function registerName() {
 
     saveLocalStorage(name,'names');
     clearFields();
-    addNameTableRow([fullName, nameRepresentation, nameUse, startDate, endDate, (preferredName ? 'sim' : 'não')]);
+    addNameTableRow([fullName, nameRepresentation, nameUse, startDate, endDate, (preferredName ? 'Sim' : 'Não')]);
 }
 
 function addNameTableRow(cellInfoList) {
@@ -91,7 +91,6 @@ function addNameTableRow(cellInfoList) {
     });
     newCell.appendChild(btnDel);
     newCell.appendChild(btnEdit);
-
 }
 
 function clearFields() {

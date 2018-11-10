@@ -47,6 +47,10 @@
                     <a class="nav-link nav-link--custom " id="pills-contact-tab" data-toggle="pill" href="#pills-endereco" role="tab" aria-controls="pills-endereco"
                         aria-selected="false">Endereços</a>
                 </li>
+                <li>
+                    <a class="nav-link nav-link--custom " id="pills-vinculos-tab" data-toggle="pill" href="#pills-vinculos" role="tab" aria-controls="pills-vinculos"
+                        aria-selected="false">Vínculos</a>     
+                </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-identificador" role="tabpanel" aria-labelledby="pills-identificador-tab">
@@ -60,6 +64,9 @@
                 <div class="tab-pane fade" id="pills-endereco" role="tabpanel" aria-labelledby="pills-endereco-tab">
                     <div class="load-html" data-source="/tabs/tab_enderecos.html"></div>
                 </div>
+                <div class="tab-pane fade" id="pills-vinculos" role="tabpanel" aria-labelledby="pills-vinculos-tab">
+                    <div class="load-html" data-source="/tabs/tab_vinculos.html"></div>
+                </div>
             </div>
         </form>
     </div>
@@ -68,16 +75,17 @@
     </div>
     <div class="load-html" data-source="/components/modal_cadastroIdentificadores.html"></div>
     <div class="load-html" data-source="/components/modal_cadastroNomes.html"></div>
-
     <div class="load-html" data-source="/components/modal_titulos.html"></div>
     <div class="load-html" data-source="/components/modal_nomes.html"></div>
     <div class="load-html" data-source="/components/modal_sobrenomes.html"></div>
     <div class="load-html" data-source="/components/modal_sufixos.html"></div>
+    <div class="load-html" data-source="/components/modal_cadastro_vinculo.html"></div>
 
     <div class="load-html" data-source="/components/modal_cadastroEndereco.html"></div>
     
 
     <script src="resources/js/classes/name.js"></script>
+    <script src="resources/js/classes/vinculoC.js"></script>
     <script src="resources/js/classes/enderecoC.js"></script>
     <script src="resources/js/classes/identificador.js"></script>
     <script src="resources/js/cidade-estado.js"></script>

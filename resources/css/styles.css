@@ -10,6 +10,11 @@
     margin: 20px;
 }
 
+h4 {
+    font-weight: 600 !important;
+    font-size: 22px !important;
+}
+
 #pills-tabContent {
     border: 1px solid rgba(0, 0,0, 0.1);
     border-radius: 0 0 6px 6px;

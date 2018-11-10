@@ -1,0 +1,66 @@
+<div class="modal fade overlap" id="cadastroVinculoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog content-shadow" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Novo vínculo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label>Nome</label>
+                                    <input class="form-control" type="text" id="bondNameInput">
+                                </div>
+                                 <div class="col-md-6 form-group">
+                                    <label>Relacionamento</label>
+                                    <select class="form-control" name="" id="bondRelation">
+                                        <option value="7">Avó materna</option>
+                                        <option value="8">Avô materno</option>
+                                        <option value="22">Cônjuje/companheiro(a)</option>
+                                        <option value="23">Irmão</option>
+                                        <option value="24">Irmã</option>
+                                        <option value="25">Meio-irmão</option>
+                                        <option value="26">Meio-irmã</option>
+                                        <option value="27">Irmãos</option>
+                                        <option value="28">Criança</option>
+                                        <option value="29">Filha</option>
+                                        <option value="36">Avó paterna</option>
+                                        <option value="37">Avô paterno</option>
+                                        <option value="38">Tio materno</option>
+                                        <option value="40">Tio paterno</option>
+                                        <option value="41">Tia paterna</option>
+                                        <option value="939">Tia materna</option>
+                                        <option value="189">Recém nascido</option>
+                                        <option value="254">Pais</option>
+                                        <option value="262">Mãe adotiva</option>
+                                        <option value="263">Pai adotivo</option>
+                                        <option value="264">Responsável</option>
+                                        <option value="265">Coabitante</option>
+                                    </select>
+                                </div>
+                                 <div class="col-md-6 form-group">
+                                    <label>Data inicial</label>
+                                    <input class="form-control" type="date" id="bondStartDate">
+                                </div>
+                                 <div class="col-md-6 form-group">
+                                    <label>Data final</label>
+                                    <input class="form-control" type="date" id="bondEndDate">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearBondFields()">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="registerBond()">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <script src="../resources/js/scriptVinculo.js"></script>
+</div>

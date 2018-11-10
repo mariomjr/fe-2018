@@ -22,7 +22,3 @@ function saveLocalStorage(nameInfo, tag) {
     currentList.push(nameInfo);
     localStorage.setItem(tag, JSON.stringify(currentList));
 }
-
-function removeNameLocalStorage() {
-
-}
