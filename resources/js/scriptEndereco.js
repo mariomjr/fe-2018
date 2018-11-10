@@ -45,13 +45,14 @@ function adicionarEndereco() {
         indicadorDiaInicio, indicadorMesInicio, indicadorAnoInicio, dataFim, indicadorDiaFim, indicadorMesFim, indicadorAnoFim,
         caixaPostal, cep, distrito);
 
-    adicionarItemTable(enderecoObj);
 
+    adicionarItemTableEndereco(enderecoObj);
     saveLocalStorage(enderecoObj,nameLocalStoregeEndereco);
     clearAllModalEndereco();
 }
 
-function adicionarItemTable(enderecoC){
+
+function adicionarItemTableEndereco(enderecoC){
     var tableRef = document.getElementById('tableEndereco').getElementsByTagName('tbody')[0];
     var newRow   = tableRef.insertRow(tableRef.rows.length);
     

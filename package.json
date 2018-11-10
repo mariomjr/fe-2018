@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/mariomjr/mariomjr.github.io#readme",
   "dependencies": {
+    "gulp-file-include": "^2.0.1",
     "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "html-includes": "^4.0.0"
   }
 }

@@ -1,12 +1,30 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastroIdentificadorModal">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastroIdentificadorModal"
+    onclick="clearAllModalIdentificador()">
         Adicionar Identificador
 </button>
-<div class="col-md-6" style="margin-top:20px">
+
+<div class="col-md-12" style="margin-top:20px">
     <h4 class="mb-3">Cadastrados</h4>
     <div class="row">
         <div class="col-md-12">
-            <ul id="registeredIdentificador" class="modal-text-list"></ul>
+            <table class="table" id="tableIdentificador">
+                <thead>
+                    <tr>
+                        <th scope="col">Tipo identificador</th>
+                        <th scope="col">Área geográfica</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Designação</th>
+                        <th scope="col">Emissor</th>
+                        <th scope="col">Tipo de certidão</th>
+                        <th scope="col">Nome do cartório</th>
+                        <th scope="col">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>   
+                </tbody>
+            </table>
             <div id="tabelaVaziaIdentificador">Nenhum identificador cadastrado!</div>
         </div>
     </div>
 </div>
+<script src="/resources/js/scriptIdentificador.js"></script>

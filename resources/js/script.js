@@ -2,9 +2,6 @@ function init() {
     $(".load-html").each(function () {
         $(this).load(this.dataset.source);
     });
-    $(document).ready(() => {
-       // addEnterEvenToButtons();
-    });
 }
 
 function addEnterEvenToButtons() {
@@ -22,3 +19,8 @@ function saveLocalStorage(nameInfo, tag) {
     currentList.push(nameInfo);
     localStorage.setItem(tag, JSON.stringify(currentList));
 }
+
+function removeNameLocalStorage() {
+
+}
+

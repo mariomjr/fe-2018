@@ -102,10 +102,6 @@ h4 {
     font-weight: 600;
 }
 
-.modal-text-list li button {
-    
-}
-
 .form-group-zero-margin-bottom{
     margin-bottom: 0rem !important;
 }
@@ -128,8 +124,11 @@ h4 {
     text-align: center;
 }
 
-
 /* TABLES */
 .table td {
     vertical-align: middle !important;
+}
+
+.checkbox-centered {
+    transform: translateY(65%);
 }
