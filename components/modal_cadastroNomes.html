@@ -1,0 +1,99 @@
+<div class="modal fade" id="cadastroNomeModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Novo Nome</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="mb-3">Nome completo</h4>
+                        <form class="needs-validation" name="registerNameForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label>Títulos</label>
+                                    <div class="input-append">
+                                        <input id="titlesInputList" name="titlesInputList" type="text" class="form-control input-append__input" disabled>
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#titlesModal"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Nomes</label>
+                                    <div class="input-append">
+                                        <input id="namesInputList" name="namesInputList" type="text" class="form-control input-append__input" disabled>
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#namesModal"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Sobrenomes</label>
+                                    <div class="input-append">
+                                        <input id="surnamesInputList" name="surnamesInputList" type="text" class="form-control input-append__input" disabled>
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#surnamesModal"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Sufixos</label>
+                                    <div class="input-append">
+                                        <input id="suffixInputList" name="suffixInputList" type="text" class="form-control input-append__input" disabled>
+                                        <i class="fas fa-plus-circle input-append__icon" data-toggle="modal" data-target="#suffixModal"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Uso</label>
+                                    <select id="nameUse" class="form-control" name="nameUserSelect">
+                                        <option value="R">Relatório (R)</option>
+                                        <option value="N">Nome de recém-nascido (N)</option>
+                                        <option value="C">Nome profissional ou comercial (C)</option>
+                                        <option value="S">Nome de solteiro, nascimento, original (S)</option>
+                                        <option value="L">Nome regisrado (L)</option>
+                                        <option value="O">Outro (O)</option>                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Representação alternativa</label>
+                                    <input id="nameRepresentation" type="text" class="form-control" name="nameRepresentationInput">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Data de uso inicial</label>
+                                    <input id="startDate" type="date" class="form-control" name="startDateInput">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Data de uso final</label>
+                                    <input id="endDate"type="date" class="form-control" name="endDateInput">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Indicador de uso opcional</label>
+                                    <select id="nameUseCondition" class="form-control" name="nameUseCondition">
+                                        <option value="0">Selecione uma opção</option>
+                                        <option value="1">Informação não confiável</option>
+                                        <option value="2">Nome com erro de digitação</option>
+                                        <option value="3">Nome não deve ser utilizado</option>
+                                        <option value="4">Vínculo proibido por lei</option>
+                                        <option value="5">Requisito especial de privacidade/segurança</option>
+                                        <option value="6">Nome temporário</option>                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group d-flex align-items-center">
+                                    <div>
+                                        <input type="checkbox" id="preferredName" name="preferredName" style="transform: scale(1.3); margin-right: 10px;">
+                                        <label for="preferredName">Nome preferido</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-success float-right" onclick="registerName()" data-dismiss="modal">Registrar nome</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../resources/js/scriptNome.js"></script>
+</div>
+        

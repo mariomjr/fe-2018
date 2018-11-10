@@ -1,0 +1,221 @@
+<div class="modal fade" id="cadastroEnderecoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Endereço</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label for="tipoEnderecoSl">Tipo de endereço</label>
+                        <select id="tipoEnderecoSl" class="form-control" name="tipoEndereco">
+                            <option value="1">Comercial</option>
+                            <option value="2">Correio ou postal</option>
+                            <option value="3">Acomodação temporária</option>
+                            <option value="4" selected>Residencial</option>
+                            <option value="5" selected>Sem endereço fixo</option>
+                            <option value="6" selected>Desconhecido/não declarado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4 form-group">
+                                        <label for="dataInicialEnderecoInput">Data inicial</label>
+                                        <input type="date" class="form-control" id="dataInicialEnderecoInput" placeholder="" value="" style="width:100%">
+                                    </div>
+                                    <div class="col-md-8 form-group">
+                                        <label for="indicadorInicioRd">Indicador de acurácia</label>
+                                        <div class="form-group form-group-zero-margin-bottom">
+                                            <label>Dia:</label>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp" value="ACURADO">
+                                                <label class="form-check-label">Acurado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp" value="ESTIMADO">
+                                                <label class="form-check-label">Estimado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaInicioOp" value="DESCONHECIDO">
+                                                <label class="form-check-label">Desconhecido</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-group-zero-margin-bottom">
+                                            <label>Mês:</label>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorMesInicioOp" value="ACURADO">
+                                                <label class="form-check-label">Acurado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorMesInicioOp" value="ESTIMADO">
+                                                <label class="form-check-label">Estimado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorMesInicioOp" value="DESCONHECIDO">
+                                                <label class="form-check-label">Desconhecido</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-group-zero-margin-bottom">
+                                            <label>Ano:</label>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorAnoInicioOp" value="ACURADO">
+                                                <label class="form-check-label">Acurado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorAnoInicioOp" value="ESTIMADO">
+                                                <label class="form-check-label">Estimado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorAnoInicioOp" value="DESCONHECIDO">
+                                                <label class="form-check-label">Desconhecido</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4 form-group">
+                                        <label for="dataFinalEnderecoInput">Data final</label>
+                                        <input type="date" class="form-control" id="dataFinalEnderecoInput" placeholder="" value="" style="width:100%">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label for="indicadorInicioRd">Indicador de acurácia</label>
+                                        <div class="form-group form-group-zero-margin-bottom">
+                                            <label>Dia:</label>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaFinalOp" value="ACURADO">
+                                                <label class="form-check-label">Acurado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaFinalOp" value="ESTIMADO">
+                                                <label class="form-check-label">Estimado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorDiaFinalOp" value="DESCONHECIDO">
+                                                <label class="form-check-label">Desconhecido</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-group-zero-margin-bottom">
+                                            <label>Mês:</label>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorMesFinalOp" value="ACURADO">
+                                                <label class="form-check-label">Acurado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorMesFinalOp" value="ESTIMADO">
+                                                <label class="form-check-label">Estimado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorMesFinalOp" value="DESCONHECIDO">
+                                                <label class="form-check-label">Desconhecido</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-group-zero-margin-bottom">
+                                            <label>Ano:</label>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorAnoFinalOp" value="ACURADO">
+                                                <label class="form-check-label">Acurado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorAnoFinalOp" value="ESTIMADO">
+                                                <label class="form-check-label">Estimado</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="indicadorAnoFinalOp" value="DESCONHECIDO">
+                                                <label class="form-check-label">Desconhecido</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>País</label>
+                        <div class="form-group form-group-zero-margin-bottom">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="paisEndereco" checked value="BRASIL" onchange="changePais(this)">
+                                <label class="form-check-label">Brasil</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="paisEndereco" value="OUTRO" onchange="changePais(this)">
+                                <label class="form-check-label">Outro</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="cardBrasil">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label>Estado:</label>
+                                <select id="estado1" class="form-control"></select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Cidade:</label>
+                                <select id="cidade1" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="display:none" id="cardOutro">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 form-group">
+                                <label>País:</label>
+                                <div id="paisesSelect"></div>
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <label for="estadoEnderecoInput">Estado</label>
+                                <input type="text" class="form-control" id="estadoEnderecoInput" placeholder="" value="">
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <label for="municipioEnderecoInput">Município</label>
+                                <input type="text" class="form-control" id="municipioEnderecoInput" placeholder="" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">    
+                    <div class="col-md-6 form-group">
+                        <label for="caixapostalEnderecoInput">Caixa postal</label>
+                        <input type="text" class="form-control" id="caixapostalEnderecoInput" placeholder="" value="">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="cepInput">CEP</label>
+                        <input type="text" class="form-control" id="cepInput" placeholder="" value="">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="bairroInput">Bairro</label>
+                        <input type="text" class="form-control" id="bairroInput" placeholder="" value="">
+                    </div>    
+                    <div class="col-md-6 form-group">
+                        <label for="distritoInput">Distrito</label>
+                        <input type="text" class="form-control" id="distritoInput" placeholder="" value="">
+                    </div> 
+                    
+                    <div class="col-md-12 form-group">
+                        <label for="enderecoInput">Endereço</label>
+                        <input type="text" class="form-control" id="enderecoInput" placeholder="" value="">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success" onclick="adicionarEndereco()"
+                    data-dismiss="modal">Adicionar</button>
+                <script src="../resources/js/scriptEndereco.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
+        

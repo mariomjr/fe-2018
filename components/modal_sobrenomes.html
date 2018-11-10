@@ -1,0 +1,35 @@
+<div class="modal fade overlap" id="surnamesModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog content-shadow" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sobrenomes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-md-10">
+                        <label for="">Novo Sobrenomes</label>
+                        <input id="surnameInput" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-2" style="position: relative">
+                        <button id="buttonAddTitle" class="btn btn-primary" onclick="addItemToList('surnamesList', 'surnameInput', 'surnamesInputList')" style="position: absolute; bottom: 0">
+                            <i class="fas fa-plus-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Sobrenomes cadastrados</h4>
+                        <ul id="surnamesList" class="modal-text-list"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,124 @@
+.page, :target ~ .default{
+    display:none;
+}
+
+.dafault, :target{
+    display:block;
+}
+
+.page-content {
+    margin: 20px;
+}
+
+#pills-tabContent {
+    border: 1px solid rgba(0, 0,0, 0.1);
+    border-radius: 0 0 6px 6px;
+}
+
 .navbarfloatright{
     width:100%;
 }
 
-.navbarfloatright ul{
+.navbarfloatright ul {
     width:fit-content;
     float:right;
+}
+
+.nav-pills .nav-link.nav-link--custom {
+    border-bottom: 0;
+    border-radius: 6px 6px 0 0;
+    border-top: 1px solid rgba(0, 0,0, 0.1);
+    border-right: 1px solid rgba(0, 0,0, 0.1);
+    border-left: 1px solid rgba(0, 0,0, 0.1);
+}
+
+.nav-pills .nav-link.active {
+    border-bottom: 0;
+}
+
+.tab-content>.tab-pane {
+    padding: 20px;
+}
+
+
+/* INPUT COM BOTÃO ADICIONAR */
+.input-append {
+    position: relative;
+}
+
+.input-append__input {
+    position: relative;
+    padding-right: 36px;
+}
+
+.input-append__icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    color: #007bff;
+    transition: color .2s;
+    font-size: 22px;
+}
+
+.input-append__icon:hover {
+    color: #005fc4;
+    cursor: pointer;
+}
+/* ------------------------- */
+
+/* Lista de nomes */
+.modal-text-list {
+    list-style: none;
+    background-color: #eaeaea;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.modal-text-list:empty {
+    display: none;
+}
+
+.modal-text-list:not(:empty) {
+    display: block;
+}
+
+.modal-text-list li {
+    padding: 5px;
+}
+
+.modal-text-list li:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0,0, 0.1);
+    height: 50px;
+}
+
+.modal-text-list li span {
+    font-weight: 600;
+}
+
+.modal-text-list li button {
+    
+}
+
+.form-group-zero-margin-bottom{
+    margin-bottom: 0rem !important;
+}
+/* --------------- */
+
+.modal {
+    overflow: auto;
+}
+
+.modal.overlap {
+    background-color: rgba(0,0,0,.5)
+}
+
+.modal.overlap .content-shadow {
+    box-shadow: 0px 0px 10px 0px #505050; 
+    border-radius: 6px;
+}
+
+#tabelaVazia {
+    text-align: center;
 }

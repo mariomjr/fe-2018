@@ -1,0 +1,267 @@
+<div class="modal fade" id="cadastroDadoDemograficoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Dados Demográficos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="needs-validation" novalidate>
+                            <div>
+                                <label>Nome dos pais</label>
+                                <div class="card">
+                                    <div class="col-md-12 form-group">
+                                        <label>Mãe</label>
+                                        <div class="input-append">
+                                            <input id="titlesInputList" name="titlesInputList" type="text" class="form-control input-append__input" placeholder="Nome da mãe">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label>Pai</label>
+                                        <div class="input-append">
+                                            <input id="namesInputList" name="namesInputList" type="text" class="form-control input-append__input" placeholder="Nome do pai">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Situação familiar</label>
+                                    <div class="input-append">
+                                        <input type="radio" name="situacao_familiar" value="comp_com_filho"> companheiro(a) e
+                                        filho(s)
+                                        <br>
+                                        <input type="radio" name="situacao_familiar" value="comp_sem_filho"> companheiro(a) com
+                                        laços conjugais e sem filho(s)
+                                        <br>
+                                        <input type="radio" name="situacao_familiar" value="comp_com_filho_com_familia"> companheiro(a),
+                                        com filho(s) e/ou outro(s) familia(es) <br>
+                                        <input type="radio" name="situacao_familiar" value="familia_sem_comp"> familiar(es) sem
+                                        companheiro(a)
+                                        <br>
+                                        <input type="radio" name="situacao_familiar" value="outras_pessoas"> outra(s) pessoa(s)
+                                        sem laços consaguíneos e/ou laços conjugais <br>
+                                        <input type="radio" name="situacao_familiar" value="vive_so"> vive só
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label>Data de nascimento</label>
+                                <div class="card">
+                                    <div class="col-md-18 form-group">
+                                        <div class="input-append">
+                                            <input id="suffixInputList" name="suffixInputList" type="date" class="form-control input-append__input">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label>Indicador de acurácia</label>
+                                        <table>
+                                            <tr>
+                                                <td>Dia:</td>
+                                                <td>
+                                                    <input type="radio" name="indicador_acuracia" value="acurado">Acurado
+                                                    <input type="radio" name="indicador_acuracia" value="estimado">Estimado
+                                                    <input type="radio" name="indicador_acuracia" value="desconhecido">Desconhecido
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mês:</td>
+                                                <td>
+                                                    <input type="radio" name="indicador_acuracia" value="acurado">Acurado
+                                                    <input type="radio" name="indicador_acuracia" value="estimado">Estimado
+                                                    <input type="radio" name="indicador_acuracia" value="desconhecido">Desconhecido
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ano:</td>
+                                                <td>
+                                                    <input type="radio" name="indicador_acuracia" value="acurado">Acurado
+                                                    <input type="radio" name="indicador_acuracia" value="estimado">Estimado
+                                                    <input type="radio" name="indicador_acuracia" value="desconhecido">Desconhecido
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label>Seguimento</label>
+                                        <div class="input-append">
+                                            <input id="suffixInputList" name="seguimento" type="checkbox"> Data precisa de seguimento
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label>Data de Óbito</label>
+                                <div class="card">
+                                    <div class="col-md-18 form-group">
+                                        <div class="input-append">
+                                            <input id="suffixInputList" name="suffixInputList" type="date" class="form-control input-append__input">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label>Indicador de acurácia</label>
+                                        <table>
+                                            <tr>
+                                                <td>Dia:</td>
+                                                <td>
+                                                    <input type="radio" name="indicador_acuracia" value="acurado">Acurado
+                                                    <input type="radio" name="indicador_acuracia" value="estimado">Estimado
+                                                    <input type="radio" name="indicador_acuracia" value="desconhecido">Desconhecido
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mês:</td>
+                                                <td>
+                                                    <input type="radio" name="indicador_acuracia" value="acurado">Acurado
+                                                    <input type="radio" name="indicador_acuracia" value="estimado">Estimado
+                                                    <input type="radio" name="indicador_acuracia" value="desconhecido">Desconhecido
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ano:</td>
+                                                <td>
+                                                    <input type="radio" name="indicador_acuracia" value="acurado">Acurado
+                                                    <input type="radio" name="indicador_acuracia" value="estimado">Estimado
+                                                    <input type="radio" name="indicador_acuracia" value="desconhecido">Desconhecido
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label>Fonte de notificação</label>
+                                        <div class="input-append">
+                                            <input type="radio" name="indicador_acuracia" value="cartorio">Cartório <br>
+                                            <input type="radio" name="indicador_acuracia" value="prestador_assistencia">Prestador
+                                            de assistência à saúde <br>
+                                            <input type="radio" name="indicador_acuracia" value="parente">Parente <br>
+                                            <input type="radio" name="indicador_acuracia" value="outro">Outro <br>
+                                            <input type="radio" name="indicador_acuracia" value="desconhecido">Desconhecido <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Raça/cor</label>
+                                    <div class="input-append">
+                                        <input type="radio" name="etnia" value="branca">Branca <br>
+                                        <input type="radio" name="etnia" value="preta">Preta <br>
+                                        <input type="radio" name="etnia" value="parda">Parda <br>
+                                        <input type="radio" name="etnia" value="amarela">Amarela <br>
+                                        <input type="radio" name="etnia" value="indigena">Indígena <br>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label>Sexo</label>
+                                    <div class="input-append">
+                                        <input type="radio" name="genero" value="m">Masculino (M) <br>
+                                        <input type="radio" name="genero" value="f">Feminino (F) <br>
+                                        <input type="radio" name="genero" value="i">Intersexo ou Indeterminado (I) <br>
+                                        <input type="radio" name="genero" value="u">Não declarado (U) <br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Nacionalidade</label>
+                                        <div class="form-group form-group-zero-margin-bottom">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="enderecoNascimento" checked value="BRASIL" onchange="changePais2(this)">
+                                                <label class="form-check-label">Brasileiro</label>
+                                                <input type="radio" class="form-check-input" name="enderecoNascimento" value="OUTRO" onchange="changePais2(this)">
+                                                <label class="form-check-label">Estrangeiro</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card" id="cardBrasil2">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12 form-group">
+                                                <label>Estado de nascimento:</label>
+                                                <select id="estado2" class="form-control"></select>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <label>Cidade de nascimento:</label>
+                                                <select id="cidade2" class="form-control"></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card" style="display:none" id="cardOutro2">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12 form-group">
+                                                <label>País de nascimento:</label>
+                                                <div id="paisesSelect2"></div>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <label >Data de entrada no Brasil</label>
+                                                <input type="date" class="form-control input-append__input" name="dataEntradaNoPais">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Pluralidade de nascimentos</label>
+                                    <div class="input-append">
+                                        <select>
+                                            <option value="1">Único</option>
+                                            <option value="2">Gêmeos</option>
+                                            <option value="3">Trigêmeos</option>
+                                            <option value="4">Quádruplos</option>
+                                            <option value="5">Quíntuplos</option>
+                                            <option value="6">Sêxtuplos</option>
+                                            <option value="7">Outros</option>
+                                            <option value="9" selected>Não declarado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label>Ordem de Nascimento</label>
+                                    <div class="input-append">
+                                        <select>
+                                            <option value="1">único ou primeiro</option>
+                                            <option value="2">segundo</option>
+                                            <option value="3">terceiro</option>
+                                            <option value="4">quarto</option>
+                                            <option value="5">quinto</option>
+                                            <option value="6">sexto</option>
+                                            <option value="7">outros</option>
+                                            <option value="9" selected>não declarado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Comentário de identificação</label>
+                                    <div class="input-append">
+                                        <textarea class="textarea is-small" placeholder="exemplo: dois pacientes com o mesmo nome. Não é o mesmo que 123456"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success" onclick="adicionarDadoDemografico()" data-dismiss="modal">Adicionar</button>
+                <script src="../resources/js/scriptDadoDemografico.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
