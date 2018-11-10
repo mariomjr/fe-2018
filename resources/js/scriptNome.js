@@ -41,21 +41,6 @@ function registerName() {
     const suffix = document.getElementById('suffixInputList').value.replace(/,/g, " ");
     const fullName = titles + " " + names + " " + surnames + " " + suffix;
 
-    // if(!fullName.trim()) return;
-    // const myList = document.getElementById('registeredNames');
-    // const node = document.createElement('li');
-    // const span = document.createElement('span');
-    // const btnDel = document.createElement('button');
-    // btnDel.innerHTML = 'Apagar';
-    // btnDel.className = 'btn btn-sm btn-danger float-right';
-    // btnDel.addEventListener("click", () => {
-    //     myList.removeChild(node);
-    // });
-    // span.innerHTML = fullName;
-    // node.appendChild(span);
-    // node.appendChild(btnDel);
-    // myList.appendChild(node);
-
     document.getElementById('tabelaVazia').style.display = 'none';
 
     const titlesList = document.getElementById('titlesInputList').value;
@@ -97,7 +82,16 @@ function addNameTableRow(cellInfoList) {
             document.getElementById('tabelaVazia').style.display = 'block';
         }
     });
+
+    const btnEdit = document.createElement('button');
+    btnEdit.innerHTML = 'Editar';
+    btnEdit.className = 'btn btn-sm btn-primary float-right mr-1';
+    btnEdit.addEventListener("click", () => {
+        
+    });
     newCell.appendChild(btnDel);
+    newCell.appendChild(btnEdit);
+
 }
 
 function clearFields() {

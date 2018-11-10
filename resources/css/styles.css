@@ -122,3 +122,9 @@
 #tabelaVazia {
     text-align: center;
 }
+
+
+/* TABLES */
+.table td {
+    vertical-align: middle !important;
+}
