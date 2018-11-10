@@ -39,34 +39,65 @@ function registerName() {
     const names = document.getElementById('namesInputList').value.replace(/,/g, " ");
     const surnames = document.getElementById('surnamesInputList').value.replace(/,/g, " ");
     const suffix = document.getElementById('suffixInputList').value.replace(/,/g, " ");
+    const fullName = titles + " " + names + " " + surnames + " " + suffix;
 
-    const fullName = titles + " " + names + " " + surnames;
-    if(!fullName.trim()) return;
-    const myList = document.getElementById('registeredNames');
-    const node = document.createElement('li');
-    const span = document.createElement('span');
+    // if(!fullName.trim()) return;
+    // const myList = document.getElementById('registeredNames');
+    // const node = document.createElement('li');
+    // const span = document.createElement('span');
+    // const btnDel = document.createElement('button');
+    // btnDel.innerHTML = 'Apagar';
+    // btnDel.className = 'btn btn-sm btn-danger float-right';
+    // btnDel.addEventListener("click", () => {
+    //     myList.removeChild(node);
+    // });
+    // span.innerHTML = fullName;
+    // node.appendChild(span);
+    // node.appendChild(btnDel);
+    // myList.appendChild(node);
+
+    document.getElementById('tabelaVazia').style.display = 'none';
+
+    const titlesList = document.getElementById('titlesInputList').value;
+    const namesList = document.getElementById('namesInputList').value;
+    const surnamesList = document.getElementById('surnamesInputList').value;
+    const suffixesList = document.getElementById('suffixInputList').value;
+    const nameUse =  document.getElementById('nameUse').value;
+    const nameUseCondition = document.getElementById('nameUseCondition').value;
+    const nameRepresentation = document.getElementById('nameRepresentation').value;
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+    const preferredName = document.getElementById('preferredName').checked;
+
+    let name = new nameC(fullName, titlesList, namesList, surnamesList, suffixesList, nameUse,
+        nameRepresentation, startDate, endDate, nameUseCondition, preferredName);
+
+    saveLocalStorage(name,'names');
+    clearFields();
+    addNameTableRow([fullName, nameRepresentation, nameUse, startDate, endDate, (preferredName ? 'sim' : 'não')]);
+}
+
+function addNameTableRow(cellInfoList) {
+    const tbody = document.getElementById('namesTableBody');
+    const newRow  = tbody.insertRow();
+
+    cellInfoList.forEach((textField, index) => {
+        const newCell  = newRow.insertCell(index);
+        const newText  = document.createTextNode(textField);
+        newCell.appendChild(newText);
+    });
+
+    const newCell  = newRow.insertCell(cellInfoList.length);
     const btnDel = document.createElement('button');
     btnDel.innerHTML = 'Apagar';
     btnDel.className = 'btn btn-sm btn-danger float-right';
     btnDel.addEventListener("click", () => {
-        myList.removeChild(node);
+        tbody.deleteRow(newRow.rowIdex);
+        if(tbody.getElementsByTagName('tr').length === 0) {
+            document.getElementById('tabelaVazia').style.display = 'block';
+        }
     });
-    span.innerHTML = fullName;
-    node.appendChild(span);
-    node.appendChild(btnDel);
-    myList.appendChild(node);
-
-    document.getElementById('tabelaVazia').style.display = 'none';
-
-    const nameUseStr = document.getElementById('nameUse').value;
-    const nameRepresentationStr = document.getElementById('nameRepresentation').value;
-    const startDate = document.getElementById('startDate').value;
-    const endDate = document.getElementById('endDate').value;
-
-    var name = new name(nameUseStr, nameRepresentationStr);
-
-    saveLocalStorage(name,'names');
-    clearFields();
+    newCell.appendChild(btnDel);
 }
 
 function clearFields() {

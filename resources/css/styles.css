@@ -105,3 +105,20 @@
     margin-bottom: 0rem !important;
 }
 /* --------------- */
+
+.modal {
+    overflow: auto;
+}
+
+.modal.overlap {
+    background-color: rgba(0,0,0,.5)
+}
+
+.modal.overlap .content-shadow {
+    box-shadow: 0px 0px 10px 0px #505050; 
+    border-radius: 6px;
+}
+
+#tabelaVazia {
+    text-align: center;
+}
