@@ -39,50 +39,66 @@ function adicionarEndereco() {
 
     var id = "id" + Math.random().toString(16).slice(2);
 
-    const enderecoFull = enderecoIt +' '+bairro;
-    adicionarItemLista(enderecoFull, id);
-
     document.getElementById('tabelaVaziaEndereco').style.display = 'none';
 
     var enderecoObj = new enderecoC(id, enderecoIt, bairro, tipoEndereco, dataInicio, 
         indicadorDiaInicio, indicadorMesInicio, indicadorAnoInicio, dataFim, indicadorDiaFim, indicadorMesFim, indicadorAnoFim,
         caixaPostal, cep, distrito);
 
+    adicionarItemTable(enderecoObj);
+
     saveLocalStorage(enderecoObj,nameLocalStoregeEndereco);
     clearAllModalEndereco();
 }
 
-function adicionarItemLista(nomeItemLista, idHidden){
+function adicionarItemTable(enderecoC){
+    var tableRef = document.getElementById('tableEndereco').getElementsByTagName('tbody')[0];
+    var newRow   = tableRef.insertRow(tableRef.rows.length);
+    
+    // Insert a cell in the row at index 0
+    var cell0  = newRow.insertCell(0);//Tipo endereço
+    var cell1  = newRow.insertCell(1);//Endereço
+    var cell2  = newRow.insertCell(2);//Bairro
+    var cell3  = newRow.insertCell(3);//Caixa postal
+    var cell4  = newRow.insertCell(4);//Cep
+    var cell5  = newRow.insertCell(5);//Distrito
+    var cell6  = newRow.insertCell(6);//Opçoes
 
     var inputHidden = document.createElement("input");
     inputHidden.setAttribute("type", "hidden");
-    inputHidden.setAttribute("value", idHidden);
-    const myList = document.getElementById('registeredEndereco');
-    const node = document.createElement('li');
-    const span = document.createElement('span');
-    const btnDel = document.createElement('button');
-    btnDel.innerHTML = 'Apagar';
-    btnDel.className = 'btn btn-sm btn-danger float-right';
-    btnDel.addEventListener("click", () => {
-        myList.removeChild(node);
-    });
+    inputHidden.setAttribute("value", enderecoC.id);
+
+    cell0.appendChild(inputHidden);
+    cell0.appendChild(document.createTextNode(enderecoC.tipoEndereco));
+    cell1.appendChild(document.createTextNode(enderecoC.endereco));
+    cell2.appendChild(document.createTextNode(enderecoC.bairro));
+    cell3.appendChild(document.createTextNode(enderecoC.caixaPostal));
+    cell4.appendChild(document.createTextNode(enderecoC.cep));
+    cell5.appendChild(document.createTextNode(enderecoC.distrito));
+
     const btnEdit = document.createElement('button');
     btnEdit.innerHTML = 'Editar';
-    btnEdit.className = 'btn btn-sm btn-primary float-right';
+    btnEdit.className = 'btn btn-sm btn-primary';
     btnEdit.setAttribute('data-target', '#cadastroEnderecoModal');
     btnEdit.setAttribute('data-toggle', 'modal');
     btnEdit.addEventListener("click", () => {
-        editarEndereco(node);
+        editarEndereco(newRow);
     });
-    span.innerHTML = nomeItemLista;
-    node.appendChild(inputHidden);
-    node.appendChild(span);
-    node.appendChild(btnDel);
-    node.appendChild(btnEdit);
-    myList.appendChild(node);
+
+    const btnDel = document.createElement('button');
+    btnDel.innerHTML = 'Apagar';
+    btnDel.className = 'btn btn-sm btn-danger ';
+    btnDel.addEventListener("click", () => {
+        tableRef.removeChild(newRow);
+        if(tableRef.rows.length == 0){
+            document.getElementById('tabelaVaziaEndereco').style.display = '';
+        }
+    });
+    cell6.appendChild(btnEdit);
+    cell6.appendChild(btnDel);
 }
 
-function findEnderecoByid(id){
+function findEnderecoByid(idVal){
     const item = localStorage.getItem(nameLocalStoregeEndereco);
     const jsonList = JSON.parse(item);
 
@@ -95,7 +111,7 @@ function findEnderecoByid(id){
 }
 
 function editarEndereco(node){
-    var idVal = node.childNodes[0].value;
+    var idVal = node.childNodes[0].childNodes[0].value;
     const objFound = findEnderecoByid(idVal);
 
     document.getElementById('tipoEnderecoSl').value = objFound.tipoEndereco;
