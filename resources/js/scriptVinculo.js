@@ -73,6 +73,7 @@ function addBondTableRow(id, cellInfoList, update) {
         });
 
         const btnEdit = document.createElement('button');
+        btnEdit.type = 'button';
         btnEdit.innerHTML = 'Editar';
         btnEdit.className = 'btn btn-sm btn-primary float-right mr-1';
         btnEdit.setAttribute('data-target', '#cadastroVinculoModal');
