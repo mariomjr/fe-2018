@@ -42,17 +42,18 @@ function adicionarDadoDemografico() {
     
     var varPais = '';
     var varDataEntradaNoBrasil = null;
-
+    var varEstadoNascimento = '';
+    var varCidadeNascimento = '';
     if ($("input[name='nacionalidade']:checked").val() == 'BRASIL') {
         varPais = 'Brasil';
+        varEstadoNascimento = document.getElementById('estado2').value;
+        varCidadeNascimento = document.getElementById('cidade2').value;
     } else {
-        varPais = document.getElementById('paisesEndereco').value;
+        varPais = document.getElementById('paisesSelect2').value;
         varDataEntradaNoBrasil = $("input[name='dataEntradaNoBrasil']:checked").val();
     }
-
-    const estadoNascimento = dgCidadesEstados.estado;
-    const cidadeNascimento = dgCidadesEstados.cidade;
-
+    const estadoNascimento = varEstadoNascimento;
+    const cidadeNascimento = varCidadeNascimento;
     const pais = varPais;
     const dataEntradaNoBrasil = varDataEntradaNoBrasil;
 
@@ -164,12 +165,12 @@ function editarDadoDemografico(node) {
     if ($("input[name='nacionalidade']:checked").val() == 'BRASIL') {
         pais = "Brasil"
     } else {
-        pais = objFound.pais;
+        document.getElementById('paisesSelect2').value = objFound.pais;
         dataEntradaNoBrasil = objFound.dataEntradaNoBrasil;
     }
 
-    estadoNascimento = objFound.estado;
-    cidadeNascimento = objFound.cidade;
+    document.getElementById('estado2').value = objFound.estado;
+    document.getElementById('cidade2').value = objFound.cidade;
     
     document.getElementById('pluralidadeNascimento').value = objFound.pluralidadeNascimento;
     document.getElementById('ordemNascimento').value = objFound.ordemNascimento;
