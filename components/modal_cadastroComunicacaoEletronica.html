@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Comunicacção Eletrônica</h5>
+                <h5 class="modal-title">Comunicação Eletrônica</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -49,8 +49,10 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-success" onclick="adicionarComunicacaoEletronica()"
-                    data-dismiss="modal">Adicionar</button>
+                <button type="button" class="btn btn-success" onclick="addOrEditComunicacaoEletronica(true)"
+                    data-dismiss="modal" id="btnAdicionarComunicacaoEletronica">Adicionar</button>
+                <button type="button" class="btn btn-success" onclick="addOrEditComunicacaoEletronica(false)"
+                    data-dismiss="modal" id="btnEditarComunicacaoEletronica">Editar</button>
             </div>
         </div>
     </div>
