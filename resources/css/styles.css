@@ -132,3 +132,7 @@ h4 {
 .checkbox-centered {
     transform: translateY(65%);
 }
+
+.section-title {
+    font-weight: bold;
+}

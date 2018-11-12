@@ -118,7 +118,7 @@ function adicionarItemTableDadoDemografico(dadoDemograficoC) {
 
     const btnDel = document.createElement('button');
     btnDel.innerHTML = 'Apagar';
-    btnDel.className = 'btn btn-sm btn-danger float-right';
+    btnDel.className = 'btn btn-sm btn-danger float-right mr-1';
     btnDel.addEventListener("click", () => {
         tableRef.removeChild(newRow);
         if (tableRef.rows.length == 0) {

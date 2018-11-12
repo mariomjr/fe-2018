@@ -9,107 +9,119 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <form class="needs-validation" novalidate>
-                            <div>
-                                <label>Nome dos pais</label>
-                                <div class="card">
-                                    <div class="col-md-12 form-group">
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label class="section-title">Nome dos pais</label>
+                                    <div class="form-group">
                                         <label>Mãe</label>
                                         <div class="input-append">
-                                            <input id="nomeMae" name="titlesInputList" type="text" class="form-control input-append__input" placeholder="Nome da mãe">
+                                            <input id="nomeMae" name="titlesInputList" type="text" class="form-control"
+                                                placeholder="Nome da mãe">
                                         </div>
                                     </div>
-                                    <div class="col-md-12 form-group">
+                                    <div class="form-group">
                                         <label>Pai</label>
                                         <div class="input-append">
-                                            <input id="nomePai" name="namesInputList" type="text" class="form-control input-append__input" placeholder="Nome do pai">
+                                            <input id="nomePai" name="namesInputList" type="text" class="form-control"
+                                                placeholder="Nome do pai">
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label class="section-title">Situação familiar</label>
+                                    <div class="form-group">
+                                        <input type="radio" name="situacao_familiar" value="comp_com_filho">
+                                        <label class="form-check-label">companheiro(a) e filho(s)</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="situacao_familiar" value="comp_sem_filho">
+                                        <label class="form-check-label">companheiro(a) com laços conjugais e sem
+                                            filho(s)</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="situacao_familiar" value="comp_com_filho_com_familia">
+                                        <label class="form-check-label">companheiro(a), com filho(s) e/ou outro(s)
+                                            familia(es)</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="situacao_familiar" value="familia_sem_comp">
+                                        <label class="form-check-label">familiar(es) sem companheiro(a)</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="situacao_familiar" value="outras_pessoas">
+                                        <label class="form-check-label">outra(s) pessoa(s) sem laços consaguíneos e/ou
+                                            laços conjugais</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="situacao_familiar" value="vive_so">
+                                        <label class="form-check-label">vive só</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb3">
                                 <div class="col-md-12 form-group">
-                                    <label>Situação familiar</label>
+                                    <label class="section-title">Data de nascimento</label>
                                     <div class="input-append">
-                                        <input type="radio" name="situacao_familiar" value="comp_com_filho"> companheiro(a) e
-                                        filho(s)
-                                        <br>
-                                        <input type="radio" name="situacao_familiar" value="comp_sem_filho"> companheiro(a) com
-                                        laços conjugais e sem filho(s)
-                                        <br>
-                                        <input type="radio" name="situacao_familiar" value="comp_com_filho_com_familia"> companheiro(a),
-                                        com filho(s) e/ou outro(s) familia(es) <br>
-                                        <input type="radio" name="situacao_familiar" value="familia_sem_comp"> familiar(es) sem
-                                        companheiro(a)
-                                        <br>
-                                        <input type="radio" name="situacao_familiar" value="outras_pessoas"> outra(s) pessoa(s)
-                                        sem laços consaguíneos e/ou laços conjugais <br>
-                                        <input type="radio" name="situacao_familiar" value="vive_so"> vive só
+                                        <input id="dataNascimento" name="dataNascimento" type="date" class="form-control input-append__input">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label>Indicador de acurácia</label>
+                                    <table>
+                                        <tr>
+                                            <td width="50px">Dia:</td>
+                                            <td>
+                                                <input type="radio" name="indicador_acuracia_dia_nascimento" value="ACURADO"> Acurado
+                                                <input type="radio" name="indicador_acuracia_dia_nascimento" value="ESTIMADO"> Estimado
+                                                <input type="radio" name="indicador_acuracia_dia_nascimento" value="DESCONHECIDO"> Desconhecido
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="50px">Mês: </td>
+                                            <td>
+                                                <input type="radio" name="indicador_acuracia_mes_nascimento" value="ACURADO"> Acurado
+                                                <input type="radio" name="indicador_acuracia_mes_nascimento" value="ESTIMADO"> Estimado
+                                                <input type="radio" name="indicador_acuracia_mes_nascimento" value="DESCONHECIDO"> Desconhecido
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="50px">Ano: </td>
+                                            <td>
+                                                <input type="radio" name="indicador_acuracia_ano_nascimento" value="ACURADO"> Acurado
+                                                <input type="radio" name="indicador_acuracia_ano_nascimento" value="ESTIMADO"> Estimado
+                                                <input type="radio" name="indicador_acuracia_ano_nascimento" value="DESCONHECIDO"> Desconhecido
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label class="section-title">Seguimento</label>
+                                    <div class="">
+                                        <input id="seguimento" name="seguimento" type="checkbox"> Data precisa de
+                                        seguimento
                                     </div>
                                 </div>
                             </div>
 
-                            <div>
-                                <label>Data de nascimento</label>
-                                <div class="card">
-                                    <div class="col-md-18 form-group">
-                                        <div class="input-append">
-                                            <input id="dataNascimento" name="dataNascimento" type="date" class="form-control input-append__input">
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label class="section-title">Data de Óbito</label>
+                                    <div class="form-group">
+                                        <div class="">
+                                            <input id="dataObito" name="dataObito" type="date" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-md-12 form-group">
+                                    <div class="form-group">
                                         <label>Indicador de acurácia</label>
                                         <table>
                                             <tr>
-                                                <td>Dia:</td>
-                                                <td>
-                                                    <input type="radio" name="indicador_acuracia_dia_nascimento" value="ACURADO">Acurado
-                                                    <input type="radio" name="indicador_acuracia_dia_nascimento" value="ESTIMADO">Estimado
-                                                    <input type="radio" name="indicador_acuracia_dia_nascimento" value="DESCONHECIDO">Desconhecido
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mês:</td>
-                                                <td>
-                                                    <input type="radio" name="indicador_acuracia_mes_nascimento" value="ACURADO">Acurado
-                                                    <input type="radio" name="indicador_acuracia_mes_nascimento" value="ESTIMADO">Estimado
-                                                    <input type="radio" name="indicador_acuracia_mes_nascimento" value="DESCONHECIDO">Desconhecido
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ano:</td>
-                                                <td>
-                                                    <input type="radio" name="indicador_acuracia_ano_nascimento" value="ACURADO">Acurado
-                                                    <input type="radio" name="indicador_acuracia_ano_nascimento" value="ESTIMADO">Estimado
-                                                    <input type="radio" name="indicador_acuracia_ano_nascimento" value="DESCONHECIDO">Desconhecido
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div class="col-md-12 form-group">
-                                        <label>Seguimento</label>
-                                        <div class="input-append">
-                                            <input id="seguimento" name="seguimento" type="checkbox"> Data precisa de seguimento
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label>Data de Óbito</label>
-                                <div class="card">
-                                    <div class="col-md-18 form-group">
-                                        <div class="input-append">
-                                            <input id="dataObito" name="dataObito" type="date" class="form-control input-append__input">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 form-group">
-                                        <label>Indicador de acurácia</label>
-                                        <table>
-                                            <tr>
-                                                <td>Dia:</td>
+                                                <td width="50px">Dia:</td>
                                                 <td>
                                                     <input type="radio" name="indicador_acuracia_dia_obito" value="ACURADO">Acurado
                                                     <input type="radio" name="indicador_acuracia_dia_obito" value="ESTIMADO">Estimado
@@ -117,7 +129,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Mês:</td>
+                                                <td width="50px">Mês:</td>
                                                 <td>
                                                     <input type="radio" name="indicador_acuracia_mes_obito" value="ACURADO">Acurado
                                                     <input type="radio" name="indicador_acuracia_mes_obito" value="ESTIMADO">Estimado
@@ -125,7 +137,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Ano:</td>
+                                                <td width="50px">Ano:</td>
                                                 <td>
                                                     <input type="radio" name="indicador_acuracia_ano_obito" value="ACURADO">Acurado
                                                     <input type="radio" name="indicador_acuracia_ano_obito" value="ESTIMADO">Estimado
@@ -134,34 +146,48 @@
                                             </tr>
                                         </table>
                                     </div>
-                                    <div class="col-md-12 form-group">
+                                    <div class="">
                                         <label>Fonte de notificação</label>
-                                        <div class="input-append">
+                                        <div class="">
                                             <input type="radio" name="fonteNotificacao" value="CARTORIO">Cartório <br>
                                             <input type="radio" name="fonteNotificacao" value="PRESTADOR_ASSISTENCIA">Prestador
                                             de assistência à saúde <br>
                                             <input type="radio" name="fonteNotificacao" value="PARENTE">Parente <br>
                                             <input type="radio" name="fonteNotificacao" value="OUTRO">Outro <br>
-                                            <input type="radio" name="fonteNotificacao" value="DESCONHECIDO">Desconhecido <br>
+                                            <input type="radio" name="fonteNotificacao" value="DESCONHECIDO">Desconhecido
+                                            <br>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="row">
+
+                            <div class="row form-group">
                                 <div class="col-md-12 form-group">
-                                    <label>Raça/cor</label>
-                                    <div class="input-append">
-                                        <input type="radio" name="etnia" value="BRANCA">Branca <br>
-                                        <input type="radio" name="etnia" value="PRETA">Preta <br>
-                                        <input type="radio" name="etnia" value="PARDA">Parda <br>
-                                        <input type="radio" name="etnia" value="AMARELA">Amarela <br>
-                                        <input type="radio" name="etnia" value="INDIGENA">Indígena <br>
+                                    <label class="section-title">Raça/cor</label>
+                                    <div>
+                                        <input type="radio" name="etnia" value="BRANCA">
+                                        <label for="etnia">Branca</label>
                                     </div>
+                                    <div>
+                                        <input type="radio" name="etnia" value="PRETA">
+                                        <label for="etnia">Preta</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="etnia" value="PARDA">
+                                        <label for="etnia">Parda</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="etnia" value="AMARELA">
+                                        <label for="etnia">Amarela</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="etnia" value="INDIGENA">
+                                        <label for="etnia">Indígena</label>
+                                    </div>                             
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <label>Sexo</label>
-                                    <div class="input-append">
+                                    <label class="section-title">Sexo</label>
+                                    <div class="">
                                         <input type="radio" name="genero" value="M">Masculino (M) <br>
                                         <input type="radio" name="genero" value="F">Feminino (F) <br>
                                         <input type="radio" name="genero" value="I">Intersexo ou Indeterminado (I) <br>
@@ -170,55 +196,50 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label>Nacionalidade</label>
-                                        <div class="form-group form-group-zero-margin-bottom">
-                                            <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" name="nacionalidade" checked value="BRASIL" onchange="changePais2(this)">
-                                                <label class="form-check-label">Brasileiro</label>
-                                                <input type="radio" class="form-check-input" name="nacionalidade" value="OUTRO" onchange="changePais2(this)">
-                                                <label class="form-check-label">Estrangeiro</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card" id="cardBrasil2">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-12 form-group">
-                                                <label>Estado de nascimento:</label>
-                                                <select id="estado2" class="form-control"></select>
-                                            </div>
-                                            <div class="col-md-12 form-group">
-                                                <label>Cidade de nascimento:</label>
-                                                <select id="cidade2" class="form-control"></select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card" style="display:none" id="cardOutro2">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-12 form-group">
-                                                <label>País de nascimento:</label>
-                                                <div id="paisesSelect2"></div>
-                                            </div>
-                                            <div class="col-md-12 form-group">
-                                                <label >Data de entrada no Brasil</label>
-                                                <input type="date" class="form-control input-append__input" name="dataEntradaNoBrasil">
-                                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label class="section-title">Nacionalidade</label>
+                                    <div class="form-group form-group-zero-margin-bottom">
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="form-check-input" name="nacionalidade" checked
+                                                value="BRASIL" onchange="changePais2(this)">
+                                            <label class="form-check-label mr-2">Brasileiro</label>
+                                            <input type="radio" class="form-check-input" name="nacionalidade" value="OUTRO"
+                                                onchange="changePais2(this)">
+                                            <label class="form-check-label">Estrangeiro</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div id="cardBrasil2">
+                                    <div class="row">
+                                        <div class="col-md-12 form-group">
+                                            <label>Estado de nascimento:</label>
+                                            <select id="estado2" class="form-control"></select>
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>Cidade de nascimento:</label>
+                                            <select id="cidade2" class="form-control"></select>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div style="display:none" id="cardOutro2">
+                                    <div class="row">
+                                        <div class="col-md-12 form-group">
+                                            <label>País de nascimento:</label>
+                                            <div id="paisesSelect2"></div>
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>Data de entrada no Brasil</label>
+                                            <input type="date" class="form-control" name="dataEntradaNoBrasil">
+                                        </div>
+                                    </div>
+                            </div>
 
-                            <div class="row">
+                            <div class="row mb-3">
                                 <div class="col-md-12 form-group">
-                                    <label>Pluralidade de nascimentos</label>
-                                    <div class="input-append">
-                                        <select id="pluralidadeNascimento">
+                                    <label class="section-title">Pluralidade de nascimentos</label>
+                                        <select class="form-control" id="pluralidadeNascimento">
                                             <option value="1">Único</option>
                                             <option value="2">Gêmeos</option>
                                             <option value="3">Trigêmeos</option>
@@ -228,12 +249,10 @@
                                             <option value="7">Outros</option>
                                             <option value="9" selected>Não declarado</option>
                                         </select>
-                                    </div>
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label>Ordem de Nascimento</label>
-                                    <div class="input-append">
-                                        <select id="ordemNascimento">
+                                        <select class="form-control" id="ordemNascimento">
                                             <option value="1">único ou primeiro</option>
                                             <option value="2">segundo</option>
                                             <option value="3">terceiro</option>
@@ -243,26 +262,24 @@
                                             <option value="7">outros</option>
                                             <option value="9" selected>não declarado</option>
                                         </select>
-                                    </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <label>Comentário de identificação</label>
+                                    <label class="section-title">Comentário de identificação</label>
                                     <div class="input-append">
-                                        <textarea id="comentarioIdentificacao" class="textarea is-small" placeholder="exemplo: dois pacientes com o mesmo nome. Não é o mesmo que 123456"></textarea>
+                                        <textarea id="comentarioIdentificacao" class="textarea is-small" style="width: 100%"
+                                        placeholder="exemplo: dois pacientes com o mesmo nome. Não é o mesmo que 123456"></textarea>
                                     </div>
                                 </div>
                             </div>
-                            
                         </form>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearAllModalDadoDemografico()">Fechar</button>
-                    <button type="button" class="btn btn-success" onclick="adicionarDadoDemografico()" data-dismiss="modal">Salvar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearAllModalDadoDemografico()">Fechar</button>
+                <button type="button" class="btn btn-success" onclick="adicionarDadoDemografico()" data-dismiss="modal">Salvar</button>
             </div>
         </div>
     </div>

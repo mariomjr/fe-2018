@@ -45,7 +45,7 @@ function adicionarItemTableComunicacaoEletronica(comunicacaoEletronicaC){
 
     let btnEdit = document.createElement('button');
     btnEdit.innerHTML = 'Editar';
-    btnEdit.className = 'btn btn-sm btn-primary';
+    btnEdit.className = 'btn btn-sm btn-primary mr-1';
     btnEdit.setAttribute('data-target', '#cadastroComunicacaoEletronicaModal');
     btnEdit.setAttribute('data-toggle', 'modal');
     btnEdit.addEventListener("click", () => {
