@@ -79,7 +79,8 @@ function adicionarItemTableEndereco(enderecoC){
 
     const btnEdit = document.createElement('button');
     btnEdit.innerHTML = 'Editar';
-    btnEdit.className = 'btn btn-sm btn-primary mr-1';
+    btnEdit.className = 'btn btn-sm btn-primary';
+    btnEdit.setAttribute('type', 'button');
     btnEdit.setAttribute('data-target', '#cadastroEnderecoModal');
     btnEdit.setAttribute('data-toggle', 'modal');
     btnEdit.addEventListener("click", () => {

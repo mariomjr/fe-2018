@@ -2,24 +2,40 @@
 var nameLocalStoregeComunicacaoElestronica = 'comunicacaoEletronica';
 
 var idEdicaoComunicacao = "";
+var rowEditComunicacao;
 
-function adicionarComunicacaoEletronica() {
+function addOrEditComunicacaoEletronica(isAdd) {
     
     const meioComunicacao = document.getElementById('meioComunicacaoSl').value;
     const preferencia = document.getElementById('preferenciaSl').value;
     const telefone = document.getElementById('telefoneInput').value;
     const utilizacao = document.getElementById('utilizacaoSl').value;
 
-    const id = "id" + Math.random().toString(16).slice(2);
-
     document.getElementById('tabelaVaziaComunicacaoEletronica').style.display = 'none';
 
-    const comunicacaoEletronicaObj = new comunicacaoEletronicaC(id, meioComunicacao, telefone, preferencia, utilizacao);
+    let idObj = "";
+    if(isAdd){
+        idObj = "id" + Math.random().toString(16).slice(2);
+    }else{
+        idObj = idEdicaoComunicacao;
+    }
+
+    const comunicacaoEletronicaObj = new comunicacaoEletronicaC(idObj, meioComunicacao, telefone, preferencia, utilizacao);
+
+    if(isAdd == false){
+        removeComunicacaoEletroenicaByid(idObj);
+        removeLinhaTableComunicacao();
+    }
 
     adicionarItemTableComunicacaoEletronica(comunicacaoEletronicaObj);
 
     saveLocalStorage(comunicacaoEletronicaObj,nameLocalStoregeComunicacaoElestronica);
     clearAllModalComunicacaoEletronica();
+}
+
+function removeLinhaTableComunicacao(){
+    const tableRefIdent = document.getElementById('tableComunicacoesEletronicas').getElementsByTagName('tbody')[0];
+    tableRefIdent.removeChild(rowEditComunicacao);
 }
 
 function adicionarItemTableComunicacaoEletronica(comunicacaoEletronicaC){
@@ -45,12 +61,11 @@ function adicionarItemTableComunicacaoEletronica(comunicacaoEletronicaC){
 
     let btnEdit = document.createElement('button');
     btnEdit.innerHTML = 'Editar';
-    btnEdit.className = 'btn btn-sm btn-primary mr-1';
-    btnEdit.setAttribute('data-target', '#cadastroComunicacaoEletronicaModal');
+    btnEdit.className = 'btn btn-sm btn-primary';
+    btnEdit.setAttribute('type', 'button');
     btnEdit.setAttribute('data-toggle', 'modal');
-    btnEdit.addEventListener("click", () => {
-        editarComunicacaoEletronica(newRowIdent);
-    });
+    btnEdit.setAttribute('data-target', '#cadastroComunicacaoEletronicaModal');
+    btnEdit.addEventListener("click", function(){ editarComunicacaoEletronica(newRowIdent);});
 
     let btnDel = document.createElement('button');
     btnDel.innerHTML = 'Apagar';
@@ -77,11 +92,26 @@ function findComunicacaoEletroenicaByid(idVal){
     return objFound;
 }
 
+function removeComunicacaoEletroenicaByid(idVal){
+    const item = localStorage.getItem(nameLocalStoregeComunicacaoElestronica);
+    const jsonList = JSON.parse(item);
+
+    for (var i = 0; i < jsonList.length; i++){
+        if (jsonList[i].id == idVal){
+            jsonList.splice(i,1);
+            break;
+        }
+    }
+}
+
 function editarComunicacaoEletronica(node){
+    rowEditComunicacao = node;
+
     let idVal = node.childNodes[0].childNodes[0].value;
     const objFound = findComunicacaoEletroenicaByid(idVal);
 
-    idEdicao = idVal;
+    idEdicaoComunicacao = idVal;
+    buttonAddOrEdit();
     
     document.getElementById('meioComunicacaoSl').value = objFound.meioComunicacao;
     document.getElementById('preferenciaSl').value = objFound.preferencia;
@@ -91,10 +121,22 @@ function editarComunicacaoEletronica(node){
 }
 
 function clearAllModalComunicacaoEletronica() {
+    rowEditComunicacao = null;
     idEdicaoComunicacao = "";
+    buttonAddOrEdit();
+    
     document.getElementById('meioComunicacaoSl').value = '';
     document.getElementById('preferenciaSl').value = '';
     document.getElementById('telefoneInput').value = '';
     document.getElementById('utilizacaoSl').value = '';
 }
 
+function buttonAddOrEdit(){
+    if(idEdicaoComunicacao == ""){
+        document.getElementById('btnEditarComunicacaoEletronica').style.display = 'none';
+        document.getElementById('btnAdicionarComunicacaoEletronica').style.display = '';
+    }else{
+        document.getElementById('btnAdicionarComunicacaoEletronica').style.display = 'none';
+        document.getElementById('btnEditarComunicacaoEletronica').style.display = '';
+    }
+}

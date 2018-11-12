@@ -67,6 +67,7 @@ function adicionarItemTableIdentificador(identificadorC){
     let btnEdit = document.createElement('button');
     btnEdit.innerHTML = 'Editar';
     btnEdit.className = 'btn btn-sm btn-primary';
+    btnEdit.setAttribute('type', 'button');
     btnEdit.setAttribute('data-target', '#cadastroIdentificadorModal');
     btnEdit.setAttribute('data-toggle', 'modal');
     btnEdit.addEventListener("click", () => {
